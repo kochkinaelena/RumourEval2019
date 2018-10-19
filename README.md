@@ -2,9 +2,9 @@
 
 ## Prerequisites 
 
-Keras -
+Keras '2.0.8'
 
-Hyperopt - 
+Hyperopt '0.1'
 
 ## Preprocessing (for both tasks)
 
