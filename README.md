@@ -3,17 +3,35 @@
 ## Prerequisites 
 
 Keras -
+
 Hyperopt - 
 
 ## Preprocessing (for both tasks)
 
-1. Download pre-trained word vectors
+1. Download th data from competition Codalab.
 
-. Change filepaths if needed
+https://competitions.codalab.org/competitions/19938
 
-. Choose features option
 
-. Run preprocessing script
+2. Download 300d word vectors pre-trained on Google News corpus. 
+
+https://code.google.com/archive/p/word2vec/
+
+3. Change filepaths for data and for word embeddings if needed:
+
+in `help_prep_functions.py` in `loadW2vModel()` function insert filepath for word embeddings
+
+in `preprocessing_tweets.py` and `preprocessing_reddit.py` change filepaths for data if needed. 
+
+4. Choose features option:
+
+In `prep_pipeline.py` on line 98:
+
+`def main(data ='RumEval2019', feats = 'SemEvalfeatures')`
+
+feats can be either `text` for avgw2v representation of the tweets or `SemEvalfeatures` for additional extra features concatenated with avgw2v. 
+
+5. Run preprocessing script
 
 ```
 python prep_pipeline.py
