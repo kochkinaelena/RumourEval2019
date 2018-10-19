@@ -50,7 +50,6 @@ The features used in this code are different to the ones used in the paper.
 
 ```
 python outer_semeval2019.py
-
 ```
 
 If you have any questions feel free to contact me E.Kochkina@warwick.ac.uk or other task organisers rumoureval-2019-organizers@googlegroups.com
