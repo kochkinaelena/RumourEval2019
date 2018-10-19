@@ -49,3 +49,6 @@ The summary of the model can be found in
 python outer_semeval2019.py
 
 ```
+
+If you have any questions feel free to contact me E.Kochkina@warwick.ac.uk or other task organisers rumoureval-2019-organizers@googlegroups.com
+
