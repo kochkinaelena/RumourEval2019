@@ -39,11 +39,14 @@ python prep_pipeline.py
 
 ## Running the model
 
-The summary of the model can be found in 
+The description of the model architecture can be found in https://www.aclweb.org/anthology/S/S17/S17-2083.pdf
+The features used in this code are different to the ones used in the paper. 
 
-1. Choose the following options
+1. In `outer_semeval2019.py` you can choose the number of trials that the search algorithm performs while searching for the parameter combination. 
 
-2. Run the baseline
+2. In `parameter_search.py` you can define search_space.
+
+3. Run the baseline
 
 ```
 python outer_semeval2019.py
