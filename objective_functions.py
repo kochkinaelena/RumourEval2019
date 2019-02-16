@@ -41,7 +41,7 @@ def objective_function_stance_branchLSTM_RumEv(params):
     uniq_dev_prediction = [fy_pred[i] for i in uindices2]
     uniq_dev_label = [fy_test[i] for i in uindices2]  
 
-    mactest_F = f1_score(uniq_dev_prediction, uniq_dev_label, average='macro')
+    mactest_F = f1_score(uniq_dev_label,uniq_dev_prediction, average='macro')
 
     output = {'loss': 1-mactest_F,
               'Params': params,
