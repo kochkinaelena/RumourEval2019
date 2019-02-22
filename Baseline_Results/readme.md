@@ -15,11 +15,3 @@ Here is the results that I have got (you should see them on CodaLab as well unde
 
 You can obtain the scores, confusion matrix and performance per class using `performance.py`. Gold standard data is not publicly available yet, but will soon be made available on the competition web page. 
 
-|     Testing set  (Macro F)        | Support         | Comment       | Deny    | Query |
-|  :---                             |     :---        |        :---   |:---     |:---   |
-| Task A   (branchLSTM)               |  0.438          |  0.913        |   0.071 |0.55   |
-
-
-|     Testing set  (Macro F)        | True            | False         | Unverified | 
-|  :---                             |     :---        |        :---   |:---        |
-| Task B    (branchLSTM)              |  0.314          |  0.529        | 0.167      |
