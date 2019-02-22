@@ -1,5 +1,5 @@
 """
-Contins function that defines model's architecture
+Contains function that defines model's architecture
 """
 import numpy as np
 from keras.models import Sequential
@@ -7,10 +7,11 @@ from keras.layers import Dense, Dropout, LSTM
 from keras.layers import TimeDistributed, Masking
 from keras import optimizers
 from keras import regularizers
-
+#from keras.models import load_model
+import json
 #%%
 
-def LSTM_model_veracity(x_train, y_train, x_test, params):
+def LSTM_model_veracity(x_train, y_train, x_test, params,eval=False ):
     num_lstm_units = int(params['num_lstm_units'])
     num_lstm_layers = int(params['num_lstm_layers'])
     num_dense_layers = int(params['num_dense_layers'])
@@ -38,8 +39,16 @@ def LSTM_model_veracity(x_train, y_train, x_test, params):
                   metrics=['accuracy'])
     model.fit(x_train, y_train,
               batch_size=mb_size,
-              epochs=num_epochs, shuffle=True, class_weight=None)
-    pred_probabilities = model.predict(x_test, batch_size=mb_size)
+              epochs=num_epochs, shuffle=True, class_weight=None, verbose=0)
+    if eval==True:
+
+        model.save('output/my_model_veracity.h5')
+        json_string = model.to_json()
+        with open('output/model_architecture_veracity.json','w') as fout:
+            json.dump(json_string,fout)
+        model.save_weights('output/my_model_veracity_weights.h5')
+
+    pred_probabilities = model.predict(x_test, batch_size=mb_size, verbose=0)
     confidence = np.max(pred_probabilities, axis=1)
     Y_pred = model.predict_classes(x_test, batch_size=mb_size)
     return Y_pred, confidence
@@ -47,7 +56,7 @@ def LSTM_model_veracity(x_train, y_train, x_test, params):
 #%%
     
 
-def LSTM_model_stance(x_train, y_train, x_test, params):
+def LSTM_model_stance(x_train, y_train, x_test, params,eval=False ):
     num_lstm_units = int(params['num_lstm_units'])
     num_lstm_layers = int(params['num_lstm_layers'])
     num_dense_layers = int(params['num_dense_layers'])
@@ -77,8 +86,15 @@ def LSTM_model_stance(x_train, y_train, x_test, params):
                   metrics=['accuracy'])
     model.fit(x_train, y_train,
               batch_size=mb_size,
-              epochs=num_epochs, shuffle=True, class_weight=None)
-    pred_probabilities = model.predict(x_test, batch_size=mb_size)
+              epochs=num_epochs, shuffle=True, class_weight=None, verbose=0)
+    if eval==True:
+        model.save('output/my_model_stance.h5')
+        json_string = model.to_json()
+        with open('output/model_architecture_stance.json','w') as fout:
+            json.dump(json_string,fout)
+        model.save_weights('output/my_model_stance_weights.h5')
+
+    pred_probabilities = model.predict(x_test, batch_size=mb_size, verbose=0)
     confidence = np.max(pred_probabilities, axis=2)
     Y_pred = model.predict_classes(x_test, batch_size=mb_size)
     return Y_pred, confidence
