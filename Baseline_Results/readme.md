@@ -13,8 +13,11 @@ Here is the results that I have got (you should see them on CodaLab as well unde
 | Task B (NileTMRG)       |  0.407   |  0.309  | 0.769|
 
 
+
 You can obtain the scores, confusion matrix and performance per class using `performance.py`. 
-**PLEASE NOTE that performance.py does not include calculation of accuracy for task B**, as the sklearn implementation of this metric is not the same as the competition version. Please use home_scorer.py from competition web page to obtain accuracy score.
+
+
+PLEASE NOTE that **performance.py does not include calculation of accuracy for task B**, as the sklearn implementation of this metric is not the same as the competition version. Please use home_scorer.py from competition web page to obtain accuracy score.
 
 Also, Gold standard data is not publicly available yet, but will soon be made available on the competition web page. 
 
