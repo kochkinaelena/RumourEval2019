@@ -3,7 +3,7 @@ Parameter search function
 """
 import pickle
 from hyperopt import fmin, tpe, hp, Trials
-
+import numpy
 
 def parameter_search(ntrials, objective_function, task):
 
@@ -25,7 +25,8 @@ def parameter_search(ntrials, objective_function, task):
                 space=search_space,
                 algo=tpe.suggest,
                 max_evals=ntrials,
-                trials=trials)
+                trials=trials,
+                rstate=numpy.random.RandomState(364))
     
     
     print(best)
