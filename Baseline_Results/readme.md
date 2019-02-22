@@ -17,9 +17,9 @@ You can obtain the scores, confusion matrix and performance per class using `per
 
 |     Testing set  (Macro F)        | Support         | Comment       | Deny    | Query |
 |  :---                             |     :---        |        :---   |:---     |:---   |
-| Task A                            |  0.438          |  0.913        |   0.071 |0.55   |
+| Task A   (branchLSTM)               |  0.438          |  0.913        |   0.071 |0.55   |
 
 
 |     Testing set  (Macro F)        | True            | False         | Unverified | 
 |  :---                             |     :---        |        :---   |:---        |
-| Task B                            |  0.314          |  0.529        | 0.167      |
+| Task B    (branchLSTM)              |  0.314          |  0.529        | 0.167      |
