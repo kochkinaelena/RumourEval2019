@@ -1,5 +1,7 @@
 This is the results I have got running the branchLSTM and my version of NileTMRG model for both tasks A and B.
 
+To load files in this directory you can use `open.py` 
+
 *I have made efforts to make this reproducible by fixing random seed, saving hyperparameters (so you don't need to re-run parameter search) and saving the resulting models as well but results may also differ based on machine you are runnig it on and package versions you are using, etc.* 
 
 Here is the results that I have got (you should see them on CodaLab as well under kochkinael in post-evaluation stage):
