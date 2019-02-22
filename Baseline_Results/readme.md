@@ -6,8 +6,20 @@ To load files in this directory you can use `open.py`
 
 Here is the results that I have got (you should see them on CodaLab as well under kochkinael in post-evaluation stage):
 
-|     Testing set         | Accuracy | F-score | RMSE|
-|  :---        |     :---        |        :---   |:--- |
-| Task A   |   0.841   |  0.493   |    |
-| Task B (branchLSTM)     |  0.382      |  0.336     |0.781 |
-| Task B (NileTMRG)    |     0.407   |   0.309    | 0.769|
+|     Testing set         | Accuracy | F-score | RMSE |
+|  :---                   |     :--- |  :---   |:---  |
+| Task A                  |  0.841   |  0.493  |      |
+| Task B (branchLSTM)     |  0.382   |  0.336  |0.781 |
+| Task B (NileTMRG)       |  0.407   |  0.309  | 0.769|
+
+
+You can obtain the scores, confusion matrix and performance per class using `performance.py`. Gold standard data is not publicly available yet, but will soon be made available on the competition web page. 
+
+|     Testing set  (Macro F)        | Support         | Comment       | Deny    | Query |
+|  :---                             |     :---        |        :---   |:---     |:---   |
+| Task A                            |  0.438          |  0.913        |   0.071 |0.55   |
+
+
+|     Testing set  (Macro F)        | True            | False         | Unverified | 
+|  :---                             |     :---        |        :---   |:---        |
+| Task B                            |  0.314          |  0.529        | 0.167      |
