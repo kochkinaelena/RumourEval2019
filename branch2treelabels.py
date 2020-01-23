@@ -18,3 +18,16 @@ def branch2treelabels(ids_test, y_test, y_pred, confidence):
         unique, counts = np.unique(temp_prediction, return_counts=True)
         tree_prediction.append(unique[np.argmax(counts)])
     return trees, tree_prediction, tree_label, tree_confidence
+
+def branch2treelabels_test(ids_test, y_pred, confidence):
+    trees = np.unique(ids_test)
+    tree_prediction = []
+    tree_confidence = []
+    for tree in trees:
+        treeindx = np.where(ids_test == tree)[0]
+        tree_confidence.append(np.float(confidence[treeindx[0]]))
+        temp_prediction = [y_pred[i] for i in treeindx]
+        # all different predictions from branches from one tree
+        unique, counts = np.unique(temp_prediction, return_counts=True)
+        tree_prediction.append(unique[np.argmax(counts)])
+    return trees, tree_prediction, tree_confidence
