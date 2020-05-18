@@ -149,7 +149,7 @@ def load_data():
 
         conversations['train'].append(conversation)
 #%%
-    path = "/Users/Helen/Documents/PhD/SemEval2019/rumoureval-2019-training-data/reddit-dev-data"
+    path = "../rumoureval-2019-training-data/reddit-dev-data"
     
     conversation_ids = listdir_nohidden(path)
    
